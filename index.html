@@ -4,3 +4,568 @@
   @Desc : content
  -->
 
+
+<!DOCTYPE html>
+<html class="signin no-js" lang="zh_CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="WebAdmin框架">
+    <title>WebAdmin框架</title>
+    <link rel="stylesheet" href="assets/plugins/stepy/jquery.stepy.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/skins/palette.css">
+    <link rel="stylesheet" href="assets/css/fonts/font.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/plugins/jstree/themes/default/style.min.css">
+    <link rel="stylesheet" href="assets/plugins/treetable/jquery.treetable.css">
+    <link rel="stylesheet" href="assets/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="assets/plugins/chosen/chosen.min.css">
+    <link rel="stylesheet" href="assets/plugins/datepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/plugins/emoji/emoji.css">
+    <link rel="stylesheet" href="assets/plugins/x-editable/bootstrap-editable.css">
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <script src="assets/js/json2.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="assets/css/skins/palette.3.css" id="skin">
+    <script src="assets/plugins/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        var base = '';
+    </script>
+</head>
+<body>
+<div class="gallery-loader" style="background-color:transparent;">
+    <div class="loader"></div>
+</div>
+
+<div class="playground hidden-xs">
+    <div class="options">
+        <div class="pg-close ti-close"></div>
+        <div class="options-container color-options">
+            <h6>皮肤</h6>
+            <a onclick="sublime.changeTheme('palette.css')" href="/assets/css/skins/palette.css"
+               class="css_orange cs_color cs_1 ">                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+            <a onclick="sublime.changeTheme('palette.2.css')" href="/assets/css/skins/palette.2.css"
+               class="css_orange cs_color cs_2 ">                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+            <a onclick="sublime.changeTheme('palette.3.css')" href="/assets/css/skins/palette.3.css"
+               class="css_orange cs_color cs_3 active">                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+            <!--<a onclick="sublime.changeTheme('palette.4.css')" href="/assets/css/skins/palette.4.css"-->
+            <!--class="css_orange cs_color cs_4 ">-->                <!--<div></div>-->
+            <!--<div></div>-->
+            <!--<div></div>-->
+            <!--<div></div>-->
+            <!--</a>-->
+        </div>
+        <div class="options-container">
+            <h6>布局</h6>
+            <a class="pg-val toggle-sidebar toggle-active " href="javascript:;">
+                <img src="assets/img/panel/small.png" alt="">
+            </a>
+            <a class="pg-val toggle-scroll toggle-active active" href="javascript:;">
+                <img src="assets/img/panel/scroll.png" alt="">
+            </a>
+            <a class="pg-val toggle-boxed toggle-active " href="javascript:;">
+                <img src="assets/img/panel/boxed.png" alt="">
+            </a>
+        </div>
+        <small class="pg-footer"><i class="ti-info-alt mr5"></i>自定义皮肤和布局</small>
+    </div>
+</div>
+<div
+        class="app  fixed-scroll ">    <header class="header header-fixed navbar">
+    <div class="brand">
+        <a href="javascript:;" class="ti-menu off-left visible-xs" data-toggle="offscreen" data-move="ltr"></a>
+        <a href="/private/home"  data-pjax class="navbar-brand">
+            <img src="assets/img/logo.png" alt="" class="o_img o_hide">
+            <span class="heading-font o_img ">
+                <img src="assets/img/logoa.png">
+            </span>
+        </a>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+        <li class="hidden-xs">
+            <a href="javascript:;" class="toggle-sidebar">
+                <i class="ti-menu"></i>
+            </a>
+        </li>
+    </ul>
+    <ul id="topnav" class="nav navbar-nav hidden-xs">
+        <!--<li>-->
+        <!--<a href="/sysadmin/home" data-pjax>-->
+        <!--<i class="ti-home"></i>-->
+        <!--<span>首页</span>-->
+        <!--</a>-->
+        <!--</li>-->
+        <li class="dropdown">
+            <a href="javascript:;" data-toggle="dropdown">
+                    <span>
+                        微信
+                    </span>
+                <b class="caret"></b
+                >
+            </a>
+            <ul class="dropdown-menu topnav">
+                <li class="dropdown">
+                    <a href="javascript:;" >
+                        <i class="toggle-accordion"></i>
+                        <span>微信会员</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="clearfix" >
+                            <a href="/private/wx/user/index"  data-pjax>
+                                <span>会员列表</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                <a href="javascript:;" >
+                    <i class="toggle-accordion"></i>
+                    <span>消息管理</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/wx/msg/user"  data-pjax>
+                            <span>会员消息</span>
+                        </a>
+                    </li>
+                    <li class="clearfix" >
+                        <a href="/private/wx/msg/mass"  data-pjax>
+                            <span>群发消息</span>
+                        </a>
+                     </li>
+                </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" >
+                        <i class="toggle-accordion"></i>
+                        <span>自动回复</span>
+                    </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/wx/reply/txt"  data-pjax>
+                            <span>文本内容</span>
+                        </a>
+                    </li>                            <li class="clearfix" >
+                    <a href="/private/wx/reply/news"  data-pjax>
+                        <span>图文内容</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/wx/reply/conf/follow"  data-pjax>
+                        <span>关注自动回复</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/wx/reply/conf/keyword"  data-pjax>
+                        <span>关键词回复</span>
+                    </a>
+                </li>                        </ul>                    </li>                    <li class="dropdown">
+                <a href="javascript:;" >
+                    <i class="toggle-accordion"></i>                            <span>微信配置</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/wx/conf/account"  data-pjax>
+                            <span>帐号配置</span>
+                        </a>
+                    </li>                            <li class="clearfix" >
+                    <a href="/private/wx/conf/menu"  data-pjax>
+                        <span>菜单配置</span>
+                    </a>
+                </li>                        </ul>                    </li>                    <li class="dropdown">
+                <a href="javascript:;" >
+                    <i class="toggle-accordion"></i>                            <span>模板消息</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/wx/tpl/id"  data-pjax>
+                            <span>模板编号</span>
+                        </a>
+                    </li>                            <li class="clearfix" >
+                    <a href="/private/wx/tpl/list"  data-pjax>
+                        <span>模板列表</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/wx/tpl/log"  data-pjax>
+                        <span>发送记录</span>
+                    </a>
+                </li>                        </ul>                    </li>                </ul>            </li>            <li class="dropdown">
+
+        <a href="javascript:;" data-toggle="dropdown">
+                    <span>
+                        CMS</span>
+            <b class="caret"></b
+            >
+        </a>
+        <ul class="dropdown-menu topnav">
+            <li class="dropdown">
+                <a href="javascript:;" >
+                    <i class="toggle-accordion"></i>                            <span>站点管理</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/cms/site"  data-pjax>
+                            <span>网站配置</span>
+                        </a>
+                    </li>                        </ul>                    </li>                    <li class="dropdown">
+            <a href="javascript:;" >
+                <i class="toggle-accordion"></i>                            <span>内容管理</span>
+            </a>
+            <ul class="sub-menu">
+                <li class="clearfix" >
+                    <a href="/private/cms/channel"  data-pjax>
+                        <span>栏目管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                <a href="/private/cms/article"  data-pjax>
+                    <span>文章管理</span>
+                </a>
+            </li>                        </ul>                    </li>                    <li class="dropdown">
+            <a href="javascript:;" >
+                <i class="toggle-accordion"></i>                            <span>广告链接</span>
+            </a>
+            <ul class="sub-menu">
+                <li class="clearfix" >
+                    <a href="/private/cms/link/class"  data-pjax>
+                        <span>链接分类</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                <a href="/private/cms/link/link"  data-pjax>
+                    <span>链接管理</span>
+                </a>
+            </li>                        </ul>                    </li>                </ul>            </li>            <li class="dropdown">
+
+        <a href="javascript:;" data-toggle="dropdown">
+                    <span>
+                        订餐</span>
+            <b class="caret"></b
+            >
+        </a>
+        <ul class="dropdown-menu topnav">
+            <li class="dropdown">
+                <a href="javascript:;" >
+                    <i class="toggle-accordion"></i>                            <span>订餐管理</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/robot/user"  data-pjax>
+                            <span>用户管理</span>
+                        </a>
+                    </li>                            <li class="clearfix" >
+                    <a href="/private/robot/order"  data-pjax>
+                        <span>订单管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/robot/config"  data-pjax>
+                        <span>订餐配置</span>
+                    </a>
+                </li>                        </ul>                    </li>                </ul>            </li>            <li class="dropdown">
+
+        <a href="javascript:;" data-toggle="dropdown">
+                    <span>
+                        系统</span>
+            <b class="caret"></b
+            >
+        </a>
+        <ul class="dropdown-menu topnav">
+            <li class="dropdown">
+                <a href="javascript:;" >
+                    <i class="toggle-accordion"></i>                            <span>系统管理</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="clearfix" >
+                        <a href="/private/sys/unit"  data-pjax>
+                            <span>单位管理</span>
+                        </a>
+                    </li>                            <li class="clearfix" >
+                    <a href="/private/sys/user"  data-pjax>
+                        <span>用户管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/role"  data-pjax>
+                        <span>角色管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/menu"  data-pjax>
+                        <span>菜单管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/conf"  data-pjax>
+                        <span>系统参数</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/log"  data-pjax>
+                        <span>日志管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/task"  data-pjax>
+                        <span>定时任务</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/route"  data-pjax>
+                        <span>自定义路由</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/api"  data-pjax>
+                        <span>应用管理</span>
+                    </a>
+                </li>                            <li class="clearfix" >
+                    <a href="/private/sys/dict"  data-pjax>
+                        <span>数据字典</span>
+                    </a>
+                </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+        <li class="dropdown">
+
+        <a href="/private/pm/info " data-pjax>
+                   <span>
+                        捐赠清单</span>
+        </a>
+    </li>
+        <li>
+        <a href="/apidoc" target="_blank">Api演示</a>
+        </li>
+        <li>
+            <a href="/druid/sql.html" target="_blank">SQL监控</a>
+        </li>
+        <li>
+            <a href="http://www.wizzer.cn" target="_blank">Blog</a>
+        </li>
+        <li>
+            <a href="https://nutz.cn" target="_blank">Nutz 社区</a>
+        </li>
+        <li>
+            <a href="https://github.com/Wizzercn/NodeWk" target="_blank">NodeWk</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <!--通知位置-->
+        <li class="language-dropdown dropdown hidden-xs">
+            <a href="javascript:;" data-toggle="dropdown" id="language">
+                <img src="/assets/img/flags/cn.png" class="flag">
+                <ul class="dropdown-menu dropdown-menu-right animated fadeInUp">
+                    <li>
+                        <a href="?lang=en_US">
+                            <img src="/assets/img/flags/us.png" class="flag">
+                            <span class="language">English</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?lang=zh_CN">
+                            <img src="/assets/img/flags/cn.png" class="flag">
+                            <span class="language">中文</span>
+                        </a>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <li class="off-right">
+            <a href="javascript:;" data-toggle="dropdown">
+                <span class="hidden-xs ml10">超级管理员</span>
+                <i class="ti-angle-down ti-caret hidden-xs"></i>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft">
+                <li>
+                    <a href="/private/sys/user/custom" data-toggle="modal"
+                       data-target="#homeDetail">常用菜单</a>
+                </li>
+
+                <li class="dropdown hidden-xs">
+                    <a href="javascript:;" class="pg-toggle">
+                        页面布局
+                    </a>
+                </li>
+                <li>
+                    <a href="/private/sys/user/pass" data-toggle="modal"
+                       data-target="#homeDetail">修改密码</a>
+                </li>
+            </ul>
+        </li>
+        <li class="off-right">
+            <a href="/private/login/logout">
+                <i class="ti-power-off"></i>
+            </a>
+        </li>
+    </ul>
+</header>
+    <section class="layout">
+
+        <aside class="sidebar offscreen-left">
+
+            <nav class="main-navigation" data-height="auto" data-size="6px" data-distance="0" data-rail-visible="true"
+                 data-wheel-step="10">
+                <!--<p class="nav-title">MENU</p>-->
+                <ul class="nav">
+                    <li class="open">
+                        <a href="javascript:;">
+                            <i class="toggle-accordion"></i>
+                            <i class="ti-heart"></i>
+                            <span>常用菜单</span>
+                        </a>
+                        <ul class="sub-menu">
+
+                            <li>
+                                <a href="/private/robot/user" data-pjax>
+                                    <span>用户管理</span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="/private/robot/order" data-pjax>
+                                    <span>订单管理</span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="/private/robot/config" data-pjax>
+                                    <span>订餐配置</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul id="leftnav" class="nav">
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content" id="container">
+            <div class="pull-right" style="padding-top: 20px;z-index:999">
+
+                <div style="position:absolute;top:100px;right:320px;">
+                    <span style="color: red;font-size: 14px;">（欢迎打赏，打赏清单在顶部菜单）</span><br>
+                    <img src="/assets/img/zfb2.jpg" width="255" height="450"></div>
+                <div style="position:absolute;top:100px;right:50px;">
+                    <br>
+                    <img src="/assets/img/wx2.jpg" width="255" height="450"></div>
+            </div>
+            <div class="content-wrap">
+
+            </div>
+
+
+
+        </section>
+    </section>
+
+
+</div>
+<div id="homeDetail" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!--script-->
+<script src="assets/plugins/modernizr.js"></script>
+<script src="assets/js/jquery.pjax.js"></script>
+<script src="assets/bootstrap/js/bootstrap.js"></script>
+<script src="assets/plugins/jquery.form.js"></script>
+<script src="assets/plugins/parsley.min.js"></script>
+<script src="assets/plugins/parsley.zh_cn.js"></script>
+<script src="assets/plugins/jquery.sortable.js"></script>
+<script src="assets/plugins/jquery.nestable.js"></script>
+<script src="assets/plugins/icheck/icheck.js"></script>
+<script src="assets/plugins/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/jquery.easing.min.js"></script>
+<script src="assets/plugins/appear/jquery.appear.js"></script>
+<script src="assets/plugins/jquery.placeholder.js"></script>
+<script src="assets/plugins/fastclick.js"></script>
+<script src="assets/plugins/count-to/jquery.countTo.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/plugins/chosen/chosen.jquery.min.js"></script>
+<script src="assets/plugins/treetable/jquery.treetable.js"></script>
+<script src="assets/plugins/datatables/jquery.dataTables.js"></script>
+<script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+<script src="assets/plugins/jstree/jstree.min.js"></script>
+<script src="assets/plugins/switchery/switchery.js"></script>
+<script src="assets/plugins/stepy/jquery.stepy.js"></script>
+<script src="assets/plugins/stepy/jquery.validate.min.js"></script>
+<script src="assets/plugins/icheck/icheck.js"></script>
+<script src="assets/plugins/chosen/chosen.jquery.min.js"></script>
+<script src="assets/plugins/jquery.form.js"></script>
+<script src="assets/plugins/uploadifive/jquery.uploadifive.min.js"></script>
+<script src="assets/plugins/datepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/plugins/datepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="assets/plugins/emoji/emoji.js"></script>
+<script src="assets/plugins/sorttable/Sortable.min.js"></script>
+<script src="assets/plugins/jquery.qrcode.min.js"></script>
+<script src="assets/plugins/jquery.sparkline.js"></script>
+<script src="assets/plugins/x-editable/bootstrap-editable.js"></script>
+<script src="assets/plugins/moment.min.js"></script>
+<script src="assets/js/form.js"></script>
+<script src="assets/js/offscreen.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/page.js"></script>
+<script src="assets/js/date.js"></script>
+
+<script type="text/javascript">
+    function bindLeft(){
+        $('.main-navigation a[data-pjax]').on('click',function(){
+            $('.main-navigation a[data-pjax]').each(function(){
+                $(this).parent().removeClass('active');
+            });
+            $(this).parent().addClass('active');
+        });
+    }
+    $(document).ready(function () {
+      /*  if($.support.pjax) {
+            $(document).pjax('a[data-pjax]', '#container', {maxCacheLength:0,push:false, replace:true,fragment: '#container', timeout: 8000});
+            bindLeft();
+            $('#topnav a[data-pjax]').on('click',function(){
+                $.get("/private/home/left?url="+$(this).attr("href"),function (data) {
+                    $("#leftnav").html(data);
+                    bindLeft();
+                }, "html");
+            });
+            $.get("/private/home/path?url="+window.location.href,function (data) {
+                $("#leftnav").html(data);
+                bindLeft();
+            }, "html");
+            $(document).on('pjax:send', function () { //pjax链接点击后显示加载动画；
+                $(".gallery-loader").fadeIn();
+            });
+            $(document).on('pjax:complete', function () { //pjax链接加载完成后隐藏加载动画；
+                setTimeout(function(){$(".gallery-loader").fadeOut()},250);
+            });
+        }
+        try {
+            $(".gallery-loader").fadeOut();
+        } catch (e) {
+        }*/
+        $('#homeDetail').on('hidden.bs.modal',function(){
+            $(this).removeData("bs.modal");
+        });
+        $(".toggle-sidebar").click(function(){
+            $(".o_img").toggleClass("o_hide");
+        });
+    });
+</script>
+<!--script-->
+</body>
+</html>
